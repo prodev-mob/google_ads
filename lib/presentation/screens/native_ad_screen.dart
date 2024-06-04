@@ -97,27 +97,27 @@ class _NativeAdScreenState extends State<NativeAdScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    _nativeAd = NativeAd(
-      adUnitId: Platform.isAndroid
-          ? 'ca-app-pub-3940256099942544/2247696110'
-          : 'ca-app-pub-3940256099942544/3986624511',
-      request: const AdRequest(),
-      factoryId: 'adFactoryExample',
-      listener: NativeAdListener(
-        onAdLoaded: (Ad ad) {
-          debugPrint('$NativeAd loaded.');
-          setState(() {
-            _nativeAdIsLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          debugPrint('$NativeAd failedToLoad: $error');
-          ad.dispose();
-        },
-        onAdOpened: (Ad ad) => debugPrint('$NativeAd onAdOpened.'),
-        onAdClosed: (Ad ad) => debugPrint('$NativeAd onAdClosed.'),
-      ),
-    )..load();
+    // _nativeAd = NativeAd(
+    //   adUnitId: Platform.isAndroid
+    //       ? 'ca-app-pub-3940256099942544/2247696110'
+    //       : 'ca-app-pub-3940256099942544/3986624511',
+    //   request: const AdRequest(),
+    //   factoryId: 'adFactoryExample',
+    //   listener: NativeAdListener(
+    //     onAdLoaded: (Ad ad) {
+    //       debugPrint('$NativeAd loaded.');
+    //       setState(() {
+    //         _nativeAdIsLoaded = true;
+    //       });
+    //     },
+    //     onAdFailedToLoad: (Ad ad, LoadAdError error) {
+    //       debugPrint('$NativeAd failedToLoad: $error');
+    //       ad.dispose();
+    //     },
+    //     onAdOpened: (Ad ad) => debugPrint('$NativeAd onAdOpened.'),
+    //     onAdClosed: (Ad ad) => debugPrint('$NativeAd onAdClosed.'),
+    //   ),
+    // )..load();
 
     _adManagerBannerAd = AdManagerBannerAd(
       adUnitId: '/6499/example/banner',

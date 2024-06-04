@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:google_ads/main.dart';
 import 'package:google_ads/presentation/screens/banner_ad_screen.dart';
 import 'package:google_ads/presentation/screens/native_ad_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -151,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _rewardedAd = null;
   }
 
-  void _createRewardedInterstitialAd() {
+    void _createRewardedInterstitialAd() {
     RewardedInterstitialAd.load(
       adUnitId: Platform.isAndroid
           ? 'ca-app-pub-3940256099942544/5354046379'
